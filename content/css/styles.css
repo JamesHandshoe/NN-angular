@@ -6,6 +6,12 @@
   color: red;
 }
 
+.random-ninja {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
 body{
   font-family: Helvetica;
   margin: 0;
