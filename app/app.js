@@ -1,5 +1,5 @@
 //this creates the app module
-var myNinjaApp = angular.module('myNinjaApp', ['ngRoute']);
+var myNinjaApp = angular.module('myNinjaApp', ['ngRoute', 'ngAnimate']);
 
 //.config runs before application runs
 myNinjaApp.config(['$routeProvider', function($routeProvider){
@@ -53,6 +53,10 @@ myNinjaApp.controller('NinjaController', ['$scope', '$http', function($scope, $h
 		$scope.newninja.name = "";
 		$scope.newninja.belt = "";
 		$scope.newninja.rate = "";
+	};
+
+	$scope.removeAll = function(){
+		$scope.ninjas = [];
 	};
 
 	$http.get('data/ninjas.json').success(function(data){
