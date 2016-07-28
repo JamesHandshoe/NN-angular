@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<title>The NetNinja Angular Playlist</title>
+	<link rel="stylesheet" type="text/css" href="content/css/styles.css" />
+	<script src="app/lib/angular.min.js"></script>
+</head>
+<body ng-init="colors='orange'">
+	<main ng-view></main>
+
+	<input type="text" ng-model="favMeat" placeholder="enter your fav meat" />
+	<p class="{{colors}}">Whats up dudes!</p>
+</body>
+</html>
