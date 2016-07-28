@@ -1,5 +1,21 @@
 //this creates the app module
-var myNinjaApp = angular.module('myNinjaApp', []);
+var myNinjaApp = angular.module('myNinjaApp', ['ngRoute']);
+
+//.config runs before application runs
+myNinjaApp.config(['$routeProvider', function($routeProvider){
+
+	$routeProvider
+		.when('/home', {
+			templateUrl: "views/home.html"
+		})
+		.when('/directory', {
+			templateUrl: "views/directory.html",
+			controller: 'NinjaController'
+		}).otherwise({
+			redirectTo: '/home'
+		});
+}]);
+
 
 //controls a section of DOM
 myNinjaApp.controller('NinjaController', ['$scope', function($scope){
@@ -53,13 +69,6 @@ myNinjaApp.controller('NinjaController', ['$scope', function($scope){
 		}
 	];
 }]);
-
-
-
-//.config runs before application runs
-myNinjaApp.config(function(){
-
-});
 
 
 //.run runs after config and as application runs
