@@ -5,10 +5,13 @@
 	<link rel="stylesheet" type="text/css" href="content/css/styles.css" />
 	<script src="app/lib/angular.min.js"></script>
 </head>
-<body ng-init="colors='red'">
+<body ng-init="ninjas=['yoshi', 'crystal', 'ryu', 'shaun']">
 	<main ng-view></main>
 
 	<input type="text" ng-model="favMeat" placeholder="enter your fav meat" />
-	<p class="{{colors}}">Whats up dudes!</p>
+
+	<ul>
+		<li ng-repeat="ninja in ninjas">{{ninja}}</li>
+	</ul>
 </body>
 </html>
